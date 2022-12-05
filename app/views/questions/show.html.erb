@@ -1,0 +1,14 @@
+<div class="row justify-content-center mb-3">
+  <div class="col-12 col-md-6">
+    <p><%= @question.content %></p>
+    <div class="answers">
+      <%= simple_form_for(UserAnswer.new) do |f| %>
+        <%= f.association :answer,
+                          collection: @question.answers,
+                          label_method: :content,
+                          value_method: :id %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
