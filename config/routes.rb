@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :questions, only: :index
   resources :user_answers, only: :create
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/sobre', to: 'pages#sobre', as: :sobre
 end
